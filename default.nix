@@ -10,11 +10,11 @@ let
     (pkgs.lib.splitVersion pkgs.haskellPackages.ghc.version);
 
   # Any overrides we require to the specified haskell package set
-  haskellPackages = with pkgs.haskell.lib;
+  haskellPackages = with pkgs.haskell.lib-flipped;
     pkgs.haskell.packages.${compiler'}.override {
       overrides = self: super:
         {
-          hnix = appendPatch super.hnix ./parens-loc-fix.patch;
+          hnix = appendPatch ./parens-loc-fix.patch super.hnix;
         } // pkgs.lib.optionalAttrs hoogle {
           ghc = super.ghc // { withPackages = super.ghc.withHoogle; };
           ghcWithPackages = self.ghc.withPackages;
