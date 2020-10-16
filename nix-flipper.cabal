@@ -1,0 +1,42 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           nix-flipper
+version:        0
+homepage:       https://github.com/expipiplus1/nix-flipper#readme
+bug-reports:    https://github.com/expipiplus1/nix-flipper/issues
+author:         Joe Hermaszewski
+maintainer:     Joe Hermaszewski <flippin.heck@monoid.al>
+copyright:      2020 Joe Hermaszewski
+build-type:     Simple
+extra-source-files:
+    .gitignore
+    readme.md
+    default.nix
+
+source-repository head
+  type: git
+  location: https://github.com/expipiplus1/nix-flipper
+
+executable nix-flipper
+  main-is: Main.hs
+  other-modules:
+      Span
+      Paths_nix_flipper
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds FlexibleContexts RecordWildCards GeneralizedNewtypeDeriving LambdaCase OverloadedStrings QuasiQuotes ScopedTypeVariables TemplateHaskell TypeApplications TypeFamilies TypeOperators ViewPatterns
+  ghc-options: -Wall
+  build-depends:
+      base <5
+    , bytestring
+    , data-fix
+    , hnix
+    , pretty-simple
+    , say
+    , text
+    , uniplate
+  default-language: Haskell2010

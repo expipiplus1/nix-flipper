@@ -1,0 +1,41 @@
+name: nix-flipper
+version: 0
+author: Joe Hermaszewski
+maintainer: Joe Hermaszewski <flippin.heck@monoid.al>
+copyright: 2020 Joe Hermaszewski
+github: expipiplus1/nix-flipper
+extra-source-files:
+- .gitignore
+- readme.md
+- default.nix
+
+executables:
+  nix-flipper:
+    main: Main.hs
+    source-dirs: src
+    dependencies:
+      - base < 5
+      - bytestring
+      - pretty-simple
+      - data-fix
+      - hnix
+      - text
+      - say
+      - uniplate
+
+ghc-options: -Wall
+
+default-extensions:
+  DataKinds
+  FlexibleContexts
+  RecordWildCards
+  GeneralizedNewtypeDeriving
+  LambdaCase
+  OverloadedStrings
+  QuasiQuotes
+  ScopedTypeVariables
+  TemplateHaskell
+  TypeApplications
+  TypeFamilies
+  TypeOperators
+  ViewPatterns
