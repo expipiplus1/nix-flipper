@@ -15,27 +15,14 @@ executables:
     source-dirs: src
     dependencies:
       - base < 5
-      - bytestring
-      - pretty-simple
       - data-fix
       - hnix
       - text
       - say
-      - uniplate
 
 ghc-options: -Wall
 
 default-extensions:
-  DataKinds
-  FlexibleContexts
   RecordWildCards
-  GeneralizedNewtypeDeriving
   LambdaCase
   OverloadedStrings
-  QuasiQuotes
-  ScopedTypeVariables
-  TemplateHaskell
-  TypeApplications
-  TypeFamilies
-  TypeOperators
-  ViewPatterns
